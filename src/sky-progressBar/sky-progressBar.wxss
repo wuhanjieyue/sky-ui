@@ -1,0 +1,16 @@
+.textview{
+  position: absolute;color:var(--bg-l1);
+}
+.text{
+  transform-origin: 50% 50%;line-height: 15px;font-size: 10px;
+}
+.backview{
+  overflow: hidden;
+}
+.lineview{
+  overflow: hidden;
+}
+
+.stripeview{
+  margin-right: 15px;transform: rotate(20deg);left:-10px;width: 15px;background-color: rgba(255,255,255,0.3);
+}

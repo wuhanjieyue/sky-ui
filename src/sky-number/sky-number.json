@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "pureDataPattern": "^_",
+  "styleIsolation":"apply-shared",
+  "usingComponents": {}
+}

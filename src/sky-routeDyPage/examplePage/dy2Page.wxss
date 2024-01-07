@@ -1,0 +1,11 @@
+.pageblock{
+  background-color: var(--bg-l1);
+}
+
+.greenfont{
+  color: var(--suc-l0);
+}
+
+.minorfont{
+  color: var(--text-l0);
+}

@@ -1,0 +1,9 @@
+.leftview{
+  height: 100vh;position: absolute;right: 100vw;
+}
+.rightview{
+  width: 100vw;height: 100vh;overflow: hidden;border-radius: 24rpx;transform-origin:  left;background-color: var(--bg-l0);
+}
+.fullpage{
+  background-color: var(--mark-regular);overflow: hidden;border-radius: 24rpx;
+}

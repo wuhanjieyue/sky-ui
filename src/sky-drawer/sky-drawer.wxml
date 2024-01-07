@@ -1,0 +1,15 @@
+<view class="dc drawview normalradius "  style="background-color: {{backColor}};color: {{textColor}};">
+  <view class="dr acenter " bind:tap="tapIcon">
+    <sky-text class=" font32 weight7 mlr24 mtb24"  content="{{title}}"></sky-text>
+    <view class="mla iconview"  >
+      <sky-icon class="icon" wx:if="{{iconName}}"  icon-name="{{iconName}}" icon-img="{{iconImg}}" icon-size="46" icon-color="{{textColor}}"></sky-icon>
+    </view>
+  </view>
+  
+  <!-- <sky-divider ></sky-divider> -->
+  <view class="drawControl">
+    <view id="drawItem">
+      <slot></slot>
+    </view>
+  </view>
+</view>

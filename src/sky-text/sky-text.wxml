@@ -1,0 +1,3 @@
+<text wx:if="{{maxLines >= 0}}"  overflow="{{overflow}}" max-lines="{{maxLines}}" 	user-select="{{userSelect}}">{{content}}</text>
+
+<text wx:else  overflow="{{overflow}}"	user-select="{{userSelect}}">{{content}}</text>

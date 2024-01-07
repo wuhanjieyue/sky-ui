@@ -1,0 +1,7 @@
+.halfCircleView{
+  transform-origin: center;
+}
+
+.tipview{
+  position: absolute;background-color: var(--text-l0);padding: 12px;color: var(--text-r1);width: 46vw;top:20px;
+}

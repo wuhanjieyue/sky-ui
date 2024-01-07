@@ -1,0 +1,21 @@
+<view  class="tabview "  >
+        <view  wx:if="{{selectType == 'line'}}"  class=" orderline lineview normalradius" style="background-color: {{selectBg}};"></view>
+        <view wx:if = "{{selectType == 'box'}}"  class=" orderBox lineview normalradius" style="background-color: {{selectBg}};"></view>
+        <scroll-view  type="list"  class="scroll-view_H  " show-scrollbar="{{false}}" scroll-x  scroll-into-view="tab{{tabCurrent}}" enable-passive	scroll-with-animation="{{true}}"  worklet:onscrollstart="startscr" 	worklet:onscrollupdate='topscr' worklet:onscrollend="endscr"	> 
+            <view  id="tabstart"></view>
+            <view wx:for="{{tabList}}" wx:key="id" catch:tap="chooseTab"  data-disabled="{{item.disabled}}" data-index="{{index}}"   wx:key="orderType" id="tab{{index}}"   class="scroll-view-item_H   acenter  {{index == tabCurrent ? 'ft34 fw5' : 'ft28 gt'}} "  style="{{item.disabled ? 'opacity: 0.6;':''}}">
+              <view class="text{{index}} " >
+                  <view wx:if="{{item.logoNumber == -1}}"  class="tipView" style="background-color: {{ item.logoColor ? item.logoColor : 'var(--err-l0)'}};"></view>
+
+                  <view wx:if="{{item.logoNumber > 0}}"  class="numberView" style="background-color: {{ item.logoColor ? item.logoColor : 'var(--err-l0)'}};">{{item.logoNumber >= 99 ? '99+' : item.logoNumber}}</view>
+                <view class="dr acenter jcenter">
+                  <sky-icon wx:if="{{item.iconName}}" class="mr8 " icon-name="{{item.iconName}}" icon-color="{{item.iconColor}}" icon-size="{{iconSize}}" icon-img="{{iconImg}}"></sky-icon>
+                  <text wx:if="{{index == tabCurrent}}" class="{{selectBlod ? 'weight7':''}}" style="color: {{selectColor}};">{{item.title}}</text>
+                  <text wx:else style="color: {{tabColor}};">{{item.title}}</text>
+                </view>
+              </view>
+
+            </view>
+        </scroll-view>
+
+    </view>

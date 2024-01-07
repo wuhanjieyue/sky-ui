@@ -1,0 +1,12 @@
+<horizontal-drag-gesture-handler   tag="hor"
+        simultaneousHandlers="{{ ['pan'] }}"
+        worklet:should-response-on-move="shouldHorResponse"
+        worklet:should-accept-gesture="shouldHorAccept" 	
+        worklet:ongesture="onSwipeBack"  >
+  <view class="pageview {{routeType}}view">
+      <view class="maskview " bind:tap="tapmask"></view>
+      <view   class="container {{routeType}}" >
+        <slot name="leftslot"></slot>
+      </view>
+  </view>
+</horizontal-drag-gesture-handler>

@@ -1,0 +1,55 @@
+.tab{
+  width: 100%;overflow: hidden;position: relative;
+}
+.itemview{
+  width: 100%;padding : 12px 0px;
+}
+.tabitem{
+  flex:1
+}
+
+.iconimg{
+  width: 28px;
+  height: 28px;margin-bottom: 4px;
+}
+.bottom{
+  width: 100%;
+}
+.protrudeview{
+  position: absolute;overflow: hidden;
+}
+.concaveview{
+  position: absolute;top:12px;overflow: hidden;
+}
+.myCanvasView{
+  background-color: lightpink;
+}
+
+.shadow{
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.proholder{
+  position: absolute;top: 24px;
+}
+
+.topprotrude{
+  height: 24px;
+}
+
+.topconcave{
+  height: 12px;
+}
+
+.conAll{
+  position: relative;
+}
+.conAfter{
+  position: absolute;
+  left : -746rpx;
+  width: 0px;
+}
+
+.shadow{
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}

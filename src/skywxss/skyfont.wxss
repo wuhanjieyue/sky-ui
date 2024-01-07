@@ -1,0 +1,56 @@
+.font80{
+  font-size: 80rpx;
+}
+.font72{
+  font-size: 72rpx;
+}
+.font64{
+  font-size: 64rpx;
+}
+.font56{
+  font-size: 56rpx;
+}
+.font48{
+  font-size: 48rpx;
+}
+.font40{
+  font-size: 40rpx;
+}
+.font32{
+  font-size: 32rpx;
+}
+.font28{
+  font-size: 28rpx;
+}
+.font24{
+  font-size: 24rpx;
+}
+.font20{
+  font-size: 20rpx;
+}
+.font18{
+  font-size: 18rpx;
+}
+.font16{
+  font-size: 16rpx;
+}
+.font12{
+  font-size: 12rpx;
+}
+
+.weight9{
+  font-weight: 900;
+}
+.weight7{
+  font-weight: 700;
+}
+.weight5{
+  font-weight: 500;
+}
+.weight3{
+  font-weight: 300;
+}
+.weight1{
+  font-weight: 100;
+}
+

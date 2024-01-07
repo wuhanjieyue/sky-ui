@@ -1,0 +1,28 @@
+<sky-routeDyPage left-url="./dyLeftPage">
+  <scroll-view scroll-y type="list" slot='leftslot' style="width: 100%;height: 100%;background-color: var(--bg-l0)">
+    <view wx:for="{{list}}" wx:key="id" class="mlr24 mb36" style="background-color: var(--main-l3);">
+      <sky-text content="index---{{index}}"></sky-text>
+    </view>
+  </scroll-view>
+  <view slot="containerslot" class="pageview pageblock">
+    <sky-navbar icon-type="normal" shadow  auto-icon="home"  bind:touchLeft="backPage"  title="仿APP路由 DY2PAGE" titleBlod titleSize="36" >
+    </sky-navbar>
+    <view class="mt36"></view>
+    <view class="mlr24">
+      <sky-text class=" font48 weight7" content="## 功能说明:随便写写，后面再优化说明"></sky-text>
+      <view class="mt36"></view>
+      <sky-text class="mtb24 font32" content="1、左滑打开抽屉，这时手势是可以交互的（暂停、左右滑动），不同于直接wx.navigateTo({})打开页面"></sky-text>
+      <view class="mt36"></view>
+      <sky-text class=" font32" content="2、打开抽屉后，直接滑动页面可以触发交互、同时滑动边框只退出抽屉，而不是整个页面"></sky-text>
+      <view class="mt36"></view>
+      <sky-text class=" font32" content="3、打开抽屉后，边框右滑手势退出，直接在页面中滑动，可触发手势交互"></sky-text>
+      <view class="mt36"></view>
+      <sky-text class=" font32" content="4、其他：实现效果可参考抖音系的软件：汽水音乐或抖音"></sky-text>
+      <view class="mt36"></view>
+      <sky-text class=" font32" content="5、您也可以尝试点击以下直接打开抽屉"></sky-text>
+      <view class="mt36"></view>
+      <button  type="primary"  catch:tap="gotoLeft" class="mt32">直接打开抽屉</button>
+    </view>
+
+  </view>
+</sky-routeDyPage>

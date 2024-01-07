@@ -1,0 +1,32 @@
+.layview{
+  display: flex;flex-wrap: wrap;width: 100%;
+}
+.layitem{
+  flex-grow: 0; /* 禁止扩大宽度 */
+  flex-shrink: 0; /* 禁止缩小宽度 */
+}
+.lay8{
+  flex-basis: 12.45%;
+}
+.lay7{
+  flex-basis: 14.22%;
+}
+.lay6{
+  flex-basis: 16.6%;
+}
+.lay5{
+  flex-basis: 19.9%;
+}
+
+.lay4{
+  flex-basis: 24.9%;
+}
+
+.lay3{
+  flex-basis: 33.3%;
+}
+
+.lay2{
+  flex-basis: 49.9%;
+}
+

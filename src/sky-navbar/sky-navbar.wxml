@@ -1,0 +1,22 @@
+<view class="navcom  {{shadow ? 'shadowbottom' : ''}} dr j{{layOut}} acenter {{saftTop ? 'navview' : ''}}"  >
+    <view  wx:if="{{custom}}" style="width: 100%;">
+      <slot name="navslot"></slot>
+    </view>
+    <block wx:else>
+        <view  class="barview viewcenter superradius   {{iconType == 'normal' ? '' : 'capsule'}}" > 
+            <view class="iconview viewcenter ml16"  bind:tap="touchLeft">
+              <sky-icon  wx:if="{{leftIcon != ''}}" icon-name="{{leftIcon}}" icon-size="{{leftSize}}" icon-color="{{iconColor}}"></sky-icon>
+            </view>
+            <block wx:if="{{rightIcon != ''}}">
+              <view  class="capline gray"></view>
+              <view  class="iconview viewcenter mr16" bind:tap="touchRight">
+                <sky-icon   icon-name="{{rightIcon}}" icon-size="{{rightSize}}" icon-color="{{iconColor}}" ></sky-icon>
+              </view>
+            </block>
+        </view>
+
+      <view class="ml24 barview dc acenter jcenter"   bind:tap="touchTitle">
+        <sky-text wx:if="{{title != ''}}" style="font-size: {{titleSize}}rpx;{{titleBlod ? 'font-weight: 700;' : ''}};color:{{titleColor}}" content="{{title}}"></sky-text>
+      </view>
+    </block>
+</view>

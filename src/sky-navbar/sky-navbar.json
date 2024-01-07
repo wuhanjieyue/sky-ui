@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "styleIsolation":"apply-shared",
+  "usingComponents": {
+    "sky-icon":"../sky-icon/sky-icon",
+    "sky-text":"../sky-text/sky-text"
+  }
+}

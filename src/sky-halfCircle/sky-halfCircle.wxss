@@ -1,0 +1,3 @@
+.halfCircleView{
+  transform-origin: center;
+}

@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "numberfont"; 
+  src: url('https://sky-ui-1300145561.cos.ap-chengdu.myqcloud.com/DIN-Regular-2.otf') format('truetype');
+}
+
+.numberfont {
+  font-family: "numberfont" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.numberview{
+  transform-origin: left center;
+}

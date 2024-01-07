@@ -1,0 +1,17 @@
+<view style="position: relative;">
+
+  <canvas type="2d" id="hc{{canvasId}}" class="halfCircleView " bind:touchstart="touchCanvas" bind:touchmove="moveCanvas" bind:touchend="closeTip"></canvas>
+  <view class="tipview dc jcenter font24 normalradius">
+    <text >{{tipData.x}}</text>
+    <block wx:if="{{tipData.ylist}}">
+      <view class="mt24 dr acenter" wx:for="{{tipData.ylist}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+        <view style="background-color: {{item.color}};" class="circleradius minisize mr8"></view>
+        <text >{{item.yname}}</text>
+        <view class="mla">
+          <text >{{item.yvalue}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+

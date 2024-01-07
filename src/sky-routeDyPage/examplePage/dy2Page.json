@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "sky-routeDyPage":"/miniprogram_npm/jieyue-ui-com/sky-routeDyPage/sky-routeDyPage",
+    "sky-icon":"/miniprogram_npm/jieyue-ui-com/sky-icon/sky-icon",
+    "sky-text":"/miniprogram_npm/jieyue-ui-com/sky-text/sky-text",
+    "sky-navbar":"/miniprogram_npm/jieyue-ui-com/sky-navbar/sky-navbar"
+  }
+}

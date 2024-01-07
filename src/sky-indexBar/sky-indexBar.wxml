@@ -1,0 +1,47 @@
+<!-- 主列表 -->
+<view  class="page-container">
+
+  <scroll-view
+    type="custom"
+    scroll-y
+    show-scrollbar="{{false}}"
+    scroll-into-view="{{intoView}}"
+    scroll-with-animation="{{true}}"
+    class="scroll-view"
+    bindscroll="handleScroll"
+  >
+    <sticky-section wx:for="{{list}}" wx:key="alpha" wx:for-index="index">
+      <sticky-header >
+        <view class="city-group__title tips-color" id="index{{index}}" >{{item.alpha}}</view>
+      </sticky-header>
+      <list-view>
+        <view class="city-group__content">
+          <view class="city-group__list">
+            <block wx:for="{{item.subItems}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="name">
+              <view  class="city-group__item thin-border-bottom" hover-class="bg-highlight" data-name="{{subItem.name}}" data-index="{{index}}" data-subindex="{{subIndex}}" catch:tap="selectItem">
+                {{subItem.name}}
+              </view>
+            </block>
+          </view>
+        </view>
+      </list-view>
+    </sticky-section>
+  </scroll-view>
+  <!-- 右侧目录 -->
+  <!-- 这里也可以用 pan-gesture-handler -->
+  <view  class="right-directory dc  ">
+    <pan-gesture-handler worklet:should-accept-gesture="touchAcc" worklet:should-response-on-move="touchAcc" worklet:ongesture="touchPan" >
+      <view class="anchor-bar">
+        <view class="anchor-list">
+          <block wx:for="{{alphabet}}" wx:key="*this" wx:for-item="alpha">
+            <view data-alpha="{{alpha}}" >
+              <view class="anchor-item {{current == alpha ? ( touching ? 'selected tapped' : 'selected' ): ''}}">
+                <view class="anchor-item__inner">{{alpha}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </pan-gesture-handler>
+  </view>
+  </view>
