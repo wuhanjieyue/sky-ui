@@ -1,0 +1,28 @@
+.line{
+  height: 1rpx;flex-grow: 1;
+}
+.linetitle{
+  flex-grow: 0;
+}
+.lineview{
+  justify-content: space-between;width: 100%;
+}
+.after{
+  width: 24rpx;height: 24rpx;border-radius: 50%;margin-left: -12rpx;
+}
+.before{
+  width: 24rpx;height: 24rpx;border-radius: 50%;margin-right: -12rpx;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating-element {
+  animation: rotate 1.75s linear infinite; /* 设置动画持续时间和无限循环 */
+}

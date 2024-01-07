@@ -1,0 +1,14 @@
+<horizontal-drag-gesture-handler   tag="hor"
+      worklet:should-response-on-move="shouldHorResponse"
+      worklet:should-accept-gesture="shouldHorAccept" 	
+      worklet:ongesture="onSwipeBack"  >
+  <view class="fullpage">
+      <view class="leftview" >
+        <slot name="leftslot"></slot>
+      </view>
+      <view  class="rightview " >
+        <slot name="containerslot"></slot>
+      </view>
+  </view>
+
+</horizontal-drag-gesture-handler>

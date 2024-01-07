@@ -1,0 +1,3 @@
+.circleView{
+  transform-origin: center;
+}

@@ -1,0 +1,13 @@
+<view  class=" lineview dr acenter jbetween" >
+  <block wx:if="{{breachShow}}">
+    <view  class="after " style="background-color: {{lineBreachColor}};"></view>
+  </block>
+  <view class="line ml24" style="background-color: {{lineColor}};"></view>
+  <sky-icon wx:if="{{loading}}" class=" rotating-element ml24 {{title == '' ? 'mr24' : ''}}"  icon-name="loader"  icon-size="28" icon-color="{{loadColor}}"></sky-icon>
+  <sky-text wx:if="{{title != ''}}" class="linetitle font24 mlr24" style="color: {{textColor}}"  content="{{title}}"></sky-text>
+  <view class="line mr24" style="background-color: {{lineColor}};"></view>
+
+  <block wx:if="{{breachShow}}">
+    <view class="before " style="background-color: {{lineBreachColor}};"></view>
+  </block>
+</view>

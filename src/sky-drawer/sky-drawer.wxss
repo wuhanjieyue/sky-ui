@@ -1,0 +1,13 @@
+.drawview{
+  width: 100%;
+}
+
+.iconview{
+  padding: 24rpx 24rpx 24rpx 36rpx;
+}
+.icon{
+  transform-origin: 50% 50%;
+}
+.drawControl{
+  overflow: hidden;
+}

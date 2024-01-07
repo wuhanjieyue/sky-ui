@@ -1,0 +1,129 @@
+<horizontal-drag-gesture-handler   tag="hor"
+        simultaneousHandlers="{{ ['scroll','pan'] }}"
+        worklet:should-response-on-move="shouldHorResponse"
+        worklet:should-accept-gesture="shouldHorAccept" 	
+        worklet:ongesture="onSwipeBack"  >
+  <view class="pageview {{routeType}}view" >
+      <view class="maskview " bind:tap="tapmask"></view>
+      <view   class="container {{routeType}}" >
+        <vertical-drag-gesture-handler
+          tag="pan"
+          worklet:should-response-on-move="shouldPanResponse"
+          simultaneousHandlers="{{ ['scroll'] }}"
+          worklet:ongesture="handleVerticalDrag"
+          worklet:should-accept-gesture="shouldVerAccept" 	
+          style="flex: 1; overflow: auto;width: 100%;height: 100%;"
+          >
+            <view class="scrcontainer">
+              <slot name="heardslot"></slot>
+              <view id="{{defaultStartNode}}" > </view>
+              <vertical-drag-gesture-handler
+              tag="scroll"
+              native-view="scroll-view"
+              shouldResponseOnMove="shouldScrollViewResponse"
+              simultaneousHandlers="{{ ['pan'] }}"
+              >
+                <scroll-view
+                class="{{scrollClass}}"
+                style="flex: 1; overflow: auto"
+                scroll-x="{{scrollX}}"
+                scroll-y="{{scrollY}}"
+                upper-threshold="{{	upperThreshold}}"
+                lower-threshold="{{ lowerThreshold}}"
+                scroll-top="{{scrollTop}}"
+                scroll-left="{{scrollLeft}}"
+                scroll-into-view="{{scrollIntoView}}"
+                scroll-with-animation="{{scrollWithAnimation}}"
+                enable-back-to-top="{{	enableBackToTop}}"
+                enable-passive="{{	enablePassive}}"
+                refresher-enabled="{{refresherEnabled}}"
+                refresher-threshold="{{	refreshertThreshold}}"
+                refresher-default-style="{{refresherDefaultStyle}}"
+                refresher-background="{{refresherBackground}}"
+                refresher-triggered="{{refresherTriggered}}"
+                bounces="{{bounces}}"
+                show-scrollbar="{{	showScrollbar}}"
+                fast-deceleration="{{fastDeceleration}}"
+                type="{{routewxs.scrollType(type)}}"
+                clip="{{clip}}"
+                reverse="{{reverse}}"
+                cache-extent="{{cacheExtent}}"
+                min-drag-distance="{{	minDragDistance}}"
+                scroll-into-view-within-extent="{{	scrollIntoViewWithinExtent}}"
+                scroll-into-view-offset="{{scrollIntoViewOffset}}"
+                scroll-into-view-alignment="{{scrollIntoViewAlignment}}"
+                padding="{{padding}}"
+                refresher-two-level-enabled="{{refresherTwoLevelEnabled}}"
+                refresher-two-level-triggered="{{	refresherTwoLevelTriggered}}"
+                refresher-two-level-threshold="{{	refresherTwoLevelThreshold}}"
+                refresher-two-level-close-threshold="{{	refresherTwoLevelCloseThreshold}}"
+                refresher-two-level-scroll-enabled="{{	refresherTwoLevelScrollEnabled}}"
+                refresher-ballistic-refresh-enabled="{{	refresherBallisticRefreshEnabled}}"
+                refresher-two-level-pinned="{{refresherTwoLevelPinned}}"
+                bind:dragstart="_dragstart"
+                bind:dragging = "_dragging"
+                bind:dragend="_dragend"
+                bind:scrolltoupper="_scrolltoupper"
+                bind:scrolltolower="_scrolltolower"
+                bind:scroll="_scroll"
+                bind:refresherpulling="_refresherpulling"
+                bind:refresherrefresh="_refresherrefresh"
+                bind:refresherrestore="_refresherrestore"
+                bind:refresherwillrefresh="_refresherwillrefresh"
+                bind:refresherabort="_refresherabort"
+                worklet:onscrollstart="_onscrollstart"
+                worklet:onscrollupdate="_onscrollupdate"
+                worklet:onscrollend="_onscrollend"
+                bind:refresherstatuschange="_refresherstatuschange"
+                worklet:adjust-deceleration-velocity="_adjustDecelerationVelocity"
+                >
+                  <view  slot="refresher" wx:if="{{refresherEnabled && refresherTwoLevelEnabled}}">
+                    <slot name="refresher"></slot>
+                  </view>
+                 
+                  <block wx:if="{{type == 'custom_grid'}}">
+                    <grid-view  gridType="{{gridType}}" cross-axis-count="{{crossAxisCount}}" max-cross-axis-extent="{{maxCrossAxisExtent}}" main-axis-gap="{{	mainAxisGap}}" 	cross-axis-gap="{{	crossAxisGap}}" padding="{{gridPadding}}">
+                      <block wx:for="{{scrollList}}" wx:key="{{key}}" wx:for-item="item" wx:for-index="index">
+                        <slot index="{{ index }}" item="{{ item }}" ></slot>
+                      </block>
+                    </grid-view>
+                  </block>
+                  <block wx:if="{{type == 'custom_list'}}">
+                    <list-view padding="{{listPadding}}">
+                      <block wx:for="{{scrollList}}" wx:key="{{key}}" wx:for-item="item" wx:for-index="index">
+                        <slot index="{{ index }}" item="{{ item }}" ></slot>
+                      </block>
+                    </list-view>
+                  </block>
+                  <block  wx:if="{{type == 'list'}}">
+                    <block wx:for="{{scrollList}}" wx:key="{{key}}" wx:for-item="item" wx:for-index="index">
+                      <slot index="{{ index }}" item="{{ item }}" ></slot>
+                    </block>
+                  </block>
+                  <block wx:if="{{type == 'nested'}}">
+                    <nested-scroll-header>
+                      <slot name="nestedheader01"></slot>
+                    </nested-scroll-header>
+                    <nested-scroll-body>
+                      <slot name="nestedbody"></slot>
+                    </nested-scroll-body>
+                  </block>
+                </scroll-view>
+              </vertical-drag-gesture-handler>
+              <slot name="footslot"></slot>
+            </view>
+        </vertical-drag-gesture-handler>
+    </view>
+  </view>
+</horizontal-drag-gesture-handler>
+
+
+<wxs module="routewxs">
+    var scrollType= function(item){
+      return item.split('_')[0]
+    }
+    
+    module.exports = {
+      scrollType:scrollType
+    };
+</wxs>

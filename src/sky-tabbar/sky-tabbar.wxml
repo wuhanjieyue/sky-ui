@@ -1,0 +1,58 @@
+<view class="tabbarview tab  dc">
+  <!-- <block wx:if="{{type == 'protrude'}}">
+    <canvas  type="2d" id="myCanvas" class="myCanvasView"></canvas>
+  </block> -->
+  <!-- <block  wx:if="{{ type == 'protrude'}}" >
+    <view style="height: 24px"></view>
+    <view class="protrudeview" >
+      <view class="proholder {{shadow ? 'shadow' : ''}}" style="background-color: {{backgroundColor}};"></view>
+      <sky-protrude  tab-length="{{tabbars.length}}" background-color="{{backgroundColor}}" class="concave " shadow="{{shadow}}" border-radius="{{borderRadius}}" width="{{itemWidth}}" height="{{itemHeight}}"></sky-protrude>
+    </view>
+  </block> -->
+  <block  wx:if="{{type == 'concave' ||  type == 'protrude'}}" >
+    <view  class="top{{type}}"></view>
+    <view class="{{type}}view">
+      <view class="proholder {{shadow ? 'shadow' : ''}}" style="background-color: {{backgroundColor}};"></view>
+      <view class="conAll concave">
+        <view  class="conAfter conother {{shadow ? 'shadow' : ''}}" style="background-color: {{backgroundColor}};"></view>
+        <canvas type="2d" id="co{{canvasId}}" class="conView" ></canvas>
+      </view>
+    </view>
+  </block>
+  <view class="tabbarview itemview dr acenter jaround {{(shadow && type == 'norm') ?  'shadow' : ''}}" style="background-color: {{type == 'norm' ? backgroundColor : 'rgba(255,255,255,0)'}};" >
+      <view  wx:for="{{tabbars}}" wx:key="id" wx:for-item="item" wx:for-index="index" class="dc acenter jcenter tabitem tab{{index}}" bind:tap="tapIcon" data-path="{{item.pagePath}}" data-index="{{index}}" >
+          <block wx:if="{{item.iconPath }}">
+            <image  class="iconimg icon{{index}}" src="{{tabWxs.getIconPath(theme,selected,index,item)}}"  ></image>
+            <text class="font20 " style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</text>
+          </block>
+          <block wx:else>
+            <text class="font40  {{selected === index ? 'weight7' : ''}}" style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</text>
+          </block>
+      </view>
+  </view>
+  <view class="bottom" style="background-color:{{backgroundColor}}"></view>
+</view>
+
+<wxs module="tabWxs">
+  var getIconPath = function (theme,selected,index,item) {
+    var path = ""
+    if(selected == index){
+       
+      if(theme == "dark"){
+        path = item.selectedIconPathDark ?  item.selectedIconPathDark : item.selectedIconPath
+      }else{
+        path = item.selectedIconPath
+      }
+    }else{
+      if(theme == "dark"){
+        path = item.iconPathDark ? item.iconPathDark : item.iconPath
+      }else{
+        path = item.iconPath
+      }
+    }
+    return path;
+  }
+  module.exports = {
+    getIconPath: getIconPath
+  };
+</wxs>

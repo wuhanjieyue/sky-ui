@@ -1,0 +1,1 @@
+<canvas type="2d" id="cs{{canvasId}}" class="circleView" bind:touchstart="touchCanvas"></canvas>

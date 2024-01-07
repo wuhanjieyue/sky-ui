@@ -1,0 +1,39 @@
+.pageview{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.popRouteview{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.maskview{
+  width: 100vw;height: 100%;position: absolute;top: 0px;
+}
+.container{
+  position: absolute;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--bg-l2);
+}
+.scrcontainer{
+  width: 100%; 
+  height: 100%; 
+  display: flex; 
+  flex-direction: column;
+}
+.upRoute{
+  bottom: 0px;
+}
+.downRoute{
+  top:0px
+}
+.leftRoute{
+  right: 0px;
+}
+.rightRoute{
+  left:0px
+}
+
+

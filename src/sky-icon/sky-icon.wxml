@@ -1,0 +1,23 @@
+<image wx:if="{{iconImg != ''}}" style="width:{{iconSize ? iconSize : 36}}rpx;height: {{iconSize ? iconSize : 36}}rpx"></image>
+<block wx:elif="{{iconImg == '' && iconName != ''}}">
+  <text class="iconfont icon-{{iconName}} " style="font-size: {{iconSize ? iconSize : 36}}rpx;{{ iconwxs.color(iconColor)}}" ></text>
+</block>
+
+<wxs module="iconwxs">
+    var color= function(iconcolor){
+      if(iconcolor && iconcolor != ''){
+        return 'color:'+iconcolor
+      }else{
+        return ''
+      }
+    }
+    
+    module.exports = {
+      color:color
+    };
+</wxs>
+
+
+
+
+

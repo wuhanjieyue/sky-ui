@@ -1,0 +1,20 @@
+<horizontal-drag-gesture-handler   tag="hor"
+        simultaneousHandlers="{{ ['pan'] }}"
+        worklet:should-response-on-move="shouldHorResponse"
+        worklet:should-accept-gesture="shouldHorAccept" 	
+        worklet:ongesture="onSwipeBack"  >
+  <view class="pageview {{routeType}}view">
+      <view class="maskview " bind:tap="tapmask"></view>
+      <vertical-drag-gesture-handler
+          tag="pan"
+          worklet:should-response-on-move="shouldPanResponse"
+          worklet:ongesture="handleVerticalDrag"
+          worklet:should-accept-gesture="shouldVerAccept" 	
+          style="flex: 1; overflow: auto;width: 100%;height: 100%;"
+          >
+          <view   class="container {{routeType}}" >
+            <slot name="containerslot"></slot>
+          </view>
+      </vertical-drag-gesture-handler>
+  </view>
+</horizontal-drag-gesture-handler>

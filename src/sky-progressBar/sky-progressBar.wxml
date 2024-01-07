@@ -1,0 +1,12 @@
+<view class="backview normalradius">
+  <view class="lineview normalradius">
+    <view  style="position: absolute;top: -10px;" class="dr">
+      <view wx:for="{{stripe}}" wx:key="*this">
+        <view class="stripeview"></view>
+      </view>
+    </view>
+  </view>
+  <view class="textview dc acenter jcenter">
+    <view class="text">{{percent}}%</view>
+  </view>
+</view>

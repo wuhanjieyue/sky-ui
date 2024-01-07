@@ -1,0 +1,1 @@
+<canvas type="2d" id="hc{{canvasId}}" class="halfCircleView" bind:touchstart="touchCanvas"></canvas>

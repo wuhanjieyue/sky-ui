@@ -1,0 +1,28 @@
+.tabview{
+  width: 100%;padding: 12rpx 0rpx;overflow: hidden;
+}
+.scroll-view_H{
+  white-space: nowrap;width: 100%;height: 44px;position: relative;flex: 1;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  padding:2px 12px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.orderline{
+  height: 8rpx;position: absolute;bottom: 0rpx;left: 0rpx;
+}
+
+.orderBox{
+  height: 44px;position: absolute;top: 12rpx;left: 0rpx;
+}
+.tipView{
+  position:absolute;top: 4px;right:-10px;width: 20rpx;height: 20rpx;border-radius: 50%;
+}
+
+.numberView{
+  position:absolute;top: 0rpx;right:-10px;width: 40rpx;height: 40rpx;border-radius: 50%;line-height: 38rpx;text-align: center;font-size: 24rpx;color: var(--bg-l0);
+  
+}

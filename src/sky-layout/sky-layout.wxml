@@ -1,0 +1,5 @@
+<view class="layview">
+    <view wx:for="{{list}}" wx:key="{{key}}" wx:for-item="item" wx:for-index="index"  class="mauto layitem lay{{lineCount}}">
+        <slot wx:if="{{listFlag}}" name="layitem{{index}}" index="{{ index }}" item="{{ item }}"></slot>
+    </view>
+</view>
